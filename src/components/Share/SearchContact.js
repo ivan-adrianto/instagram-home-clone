@@ -16,9 +16,9 @@ function SearchContact() {
     }
   };
   return (
-    <div className="flex items-center min-h-14 gap-3 px-4 border-b pb-3 pt-2 flex-wrap mt-11">
+    <div className="flex items-center min-h-14 gap-3 px-4 border-b pb-3 pt-2 flex-wrap mt-11 lg:mt-0 lg:max-h-[121px] lg:items-start overflow-auto">
       <p className="font-bold">To: </p>
-      <div className="flex gap-3 max-w-[100vw] overflow-auto hide-scrollbar">
+      <div className="flex gap-3 max-w-[100vw] overflow-auto hide-scrollbar lg:flex-wrap lg:w-[calc(100%-36px)]">
         {receivers.map((receiver, index) => (
           <p
             key={index}
@@ -29,7 +29,7 @@ function SearchContact() {
         ))}
         <input
           type="text"
-          className="outline-none border-none"
+          className="outline-none border-none lg:w-full"
           placeholder="Search..."
           onChange={(e) => search(e.target.value)}
           onKeyDown={(e) => onKeyDown(e)}

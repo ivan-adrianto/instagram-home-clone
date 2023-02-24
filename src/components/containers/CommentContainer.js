@@ -20,7 +20,7 @@ function CommentContainer() {
       <Navbar />
       <CommentInput/>
       <div className="pt-28 pb-12 px-4">
-        <Comment comment={selectedPost} />
+        <Comment comment={selectedPost} isCaption />
         {selectedPost?.choices?.map((comment, index) => (
           <Comment
             comment={comment}

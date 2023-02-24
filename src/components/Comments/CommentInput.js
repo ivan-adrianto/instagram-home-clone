@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
 import { submitComment } from "../../redux/actionCreators";
+import ProfilePhoto from "../common/ProfilePhoto";
 
 function CommentInput() {
   const params = useParams();
@@ -23,12 +24,13 @@ function CommentInput() {
   const [comment, setComment] = useState("");
 
   return (
-    <div className="fixed bg-zinc-100 flex w-full top-11 gap-5 items-center px-4 py-2 max-w-[470px]">
-      <img
+    <div className="fixed lg:relative bg-zinc-100 flex w-full top-11 gap-5 items-center px-4 py-2 max-w-[470px] max-h-[60px] lg:top-0 lg:rounded-br-xl">
+      {/* <img
         src={require("../../assets/images/my-profile.jpeg")}
         className="h-8 w-8 rounded-full"
         alt="profile"
-      />
+      /> */}
+      <ProfilePhoto photo={require("../../assets/images/my-profile.jpeg")} noBorder sm />
       <form
         className="relative flex w-full h-11 items-center justify-end"
         onSubmit={submit}

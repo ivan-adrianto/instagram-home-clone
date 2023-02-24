@@ -6,9 +6,11 @@ import Post from "../Homepage/Post";
 import StorySection from "../Homepage/StorySection";
 import { getPostsRequest, setScrollHome } from "../../redux/actionCreators";
 import Toast from "../common/Toast";
+import ModalShare from "../modals/ModalShare";
+import ModalPostDetail from "../modals/ModalPostDetail";
 
 function HomeContainer() {
-  const { posts, scrollHome } = useSelector((state) => state);
+  const { posts, scrollHome, modal } = useSelector((state) => state);
   const dispatch = useDispatch();
   const setScroll = () => dispatch(setScrollHome(window.scrollY));
 
@@ -28,7 +30,7 @@ function HomeContainer() {
   }, []);
 
   return (
-    <div className="bg-white">
+    <div>
       <HomeHeader />
       <div className="pt-[42px] pb-14">
         <StorySection />
@@ -37,7 +39,9 @@ function HomeContainer() {
         ))}
       </div>
       <Navbar />
-      <Toast/>
+      <Toast />
+      {modal === "share" && <ModalShare />}
+      {modal === "detail" && <ModalPostDetail />}
     </div>
   );
 }

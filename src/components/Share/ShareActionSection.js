@@ -1,19 +1,27 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { setReceivers, setToastMessage } from "../../redux/actionCreators";
+import {
+  setModal,
+  setReceivers,
+  setToastMessage,
+} from "../../redux/actionCreators";
 
 function ShareActionSection() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const { receivers } = useSelector((state) => state);
   const send = () => {
-    navigate("/");
+    if (window.screen.width > 768) {
+      dispatch(setModal(""));
+    } else {
+      navigate("/");
+    }
     dispatch(setReceivers([]));
     dispatch(setToastMessage("Sent"));
   };
   return (
-    <div className="border-t p-4 w-full mt-4 fixed bottom-0 bg-white max-w-[470px]">
+    <div className="border-t p-4 w-full mt-4 fixed bottom-0 bg-white lg:rounded-b-2xl lg:relative lg:mt-0">
       {receivers.length > 0 && (
         <input
           type="text"

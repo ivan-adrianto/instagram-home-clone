@@ -7,7 +7,6 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: linear-gradient(to right, #F58529, #DD2A7B, #8134AF, #515BD4, #009EFD, #00BFFF);
 }
 
 code {
@@ -39,13 +38,20 @@ code {
   transform: translateY(0%);
 }
 
+/* Animation */
 .slide-up-down {
   animation-name: slide-up-down;
   animation-duration: 3s;
   animation-timing-function: ease-out;
   animation-fill-mode: forwards;
 }
-/* Animation */
+.slide-in {
+  animation-name: slide-in;
+  animation-duration: 0.4s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
 @keyframes slide-up-down {
   0% {
     transform: translateY(200%);
@@ -58,5 +64,15 @@ code {
   }
   100% {
     transform: translateY(200%);
+  }
+}
+@keyframes slide-in {
+  from {
+    transform: translateY(-70px);
+    opacity: 0.5;
+  }
+  to {
+    transform: translateY(0px);
+    opacity: 1;
   }
 }

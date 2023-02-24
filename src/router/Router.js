@@ -1,4 +1,5 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import Sidebar from "../components/common/Sidebar";
 import Comments from "../pages/Comments";
 import Homepage from "../pages/Homepage";
 import Share from "../pages/Share";
@@ -17,11 +18,16 @@ function Router() {
       path: "share",
       element: <Share />,
     },
+    {
+      path: "detail/:id",
+      element: <Homepage />,
+    },
   ]);
 
   return (
-    <div className="flex justify-center bg">
-      <div className="w-full max-w-[470px] h-screen bg-white relative" >
+    <div className="flex justify-center overflow-x-hidden">
+      <Sidebar />
+      <div className="w-full max-w-[470px] relative">
         <RouterProvider router={route} />
       </div>
     </div>

@@ -4,6 +4,7 @@ import {
   GET_POSTS_SUCCESS,
   LIKE_POST,
   SAVE_POST,
+  SET_MODAL,
   SET_RECEIVERS,
   SET_SCROLL_HOME,
   SET_SUGGESTION_LIST,
@@ -93,6 +94,13 @@ export const setReceivers = (payload) => {
 export const setToastMessage = (payload) => {
   return {
     type: SET_TOAST_MESSAGE,
+    payload,
+  };
+};
+
+export const setModal = (payload) => {
+  return {
+    type: SET_MODAL,
     payload,
   };
 };

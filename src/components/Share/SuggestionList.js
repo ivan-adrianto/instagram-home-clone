@@ -2,6 +2,7 @@ import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { setReceivers } from "../../redux/actionCreators";
 import { ReactComponent as CheckIcon } from "../../assets/icons/check-icon.svg";
+import ProfilePhoto from "../common/ProfilePhoto";
 
 function SuggestionList() {
   const dispatch = useDispatch();
@@ -17,7 +18,11 @@ function SuggestionList() {
   };
 
   return (
-    <div className={`px-4 h-full overflow-auto ${receivers.length > 0 ? 'pb-[270px]' : 'pb-40'}`}>
+    <div
+      className={`px-4 h-full lg:h-[451px] overflow-auto ${
+        receivers.length > 0 ? "pb-[270px] lg:pb-0" : "pb-40 lg:pb-0"
+      }`}
+    >
       <p className="text-sm font-bold my-3">Suggested</p>
       {suggestions.map((contact, index) => (
         <div
@@ -26,11 +31,7 @@ function SuggestionList() {
           onClick={() => select(contact)}
         >
           <div className="flex gap-3">
-            <img
-              src={contact.photo}
-              alt="profile"
-              className="h-10 w-10 rounded-full"
-            />
+            <ProfilePhoto photo={contact.photo} md noBorder />
             <div>
               <p className="text-sm font-bold">{contact.name}</p>
               <p className="text-sm text-gray-500">{contact.alias}</p>

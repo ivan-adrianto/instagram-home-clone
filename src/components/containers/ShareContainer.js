@@ -6,7 +6,7 @@ import SuggestionList from "../Share/SuggestionList";
 
 function ShareContainer() {
   return (
-    <div className="overflow-hidden h-screen">
+    <div className="overflow-hidden h-screen max-w-[470px]">
       <NavbarShare />
       <SearchContact />
       <SuggestionList />

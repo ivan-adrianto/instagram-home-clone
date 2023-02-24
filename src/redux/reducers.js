@@ -6,6 +6,7 @@ import {
   GET_POSTS_SUCCESS,
   LIKE_POST,
   SAVE_POST,
+  SET_MODAL,
   SET_RECEIVERS,
   SET_SCROLL_HOME,
   SET_SUGGESTION_LIST,
@@ -23,6 +24,7 @@ export const initialState = {
   suggestions: contacts,
   receivers: [],
   toastMessage: "",
+  modal: "",
 };
 
 export const rootReducer = (state = initialState, action) => {
@@ -116,6 +118,11 @@ export const rootReducer = (state = initialState, action) => {
       return {
         ...state,
         toastMessage: action.payload,
+      };
+    case SET_MODAL:
+      return {
+        ...state,
+        modal: action.payload,
       };
     default:
       return state;

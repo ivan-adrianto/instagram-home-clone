@@ -21,7 +21,7 @@ function Toast() {
   return (
     <div className={`flex justify-center min-w-full`}>
       <div
-        className={`items-center px-4 py-2 w-full max-w-[470px] bg-gray-900 shadow fixed bottom-12 z-10 
+        className={`items-center px-4 py-2 w-full max-w-[470px] bg-gray-900 shadow fixed bottom-12 z-10 lg:bottom-0 lg:py-4 
         ${showToast ? "slide-up-down flex" : "hidden"}`}
         role="alert"
       >

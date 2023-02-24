@@ -6,7 +6,7 @@ import { ReactComponent as MessageIcon } from "../../assets/icons/message-icon.s
 
 function Navbar() {
   return (
-    <div className="flex justify-between bg-white z-20 fixed bottom-0 w-full px-8 py-3 items-center border-t max-w-[470px]">
+    <div className="flex justify-between bg-white z-20 fixed bottom-0 w-full px-8 py-3 items-center border-t max-w-[470px] lg:hidden">
       <HomeIcon />
       <SearchIcon />
       <ReelsIcon />

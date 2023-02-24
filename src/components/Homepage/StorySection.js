@@ -3,6 +3,7 @@ import myProfile from "../../assets/images/my-profile.jpeg";
 import { ReactComponent as PlusIcon } from "../../assets/icons/small-plus-icon.svg";
 import { ReactComponent as ChevronIcon } from "../../assets/icons/rounded-chevron.svg";
 import contacts from "../../dummyData/contacts";
+import ProfilePhoto from "../common/ProfilePhoto";
 
 function StorySection() {
   const ref = useRef(null);
@@ -17,11 +18,11 @@ function StorySection() {
   };
   return (
     <div
-      className="flex overflow-auto gap-4 px-4 pt-3 pb-2 hide-scrollbar bg-zinc-50 border-b"
+      className="flex overflow-auto gap-4 px-4 pt-3 pb-2 hide-scrollbar bg-zinc-50 lg:bg-white border-b lg:border-0"
       ref={ref}
     >
       <div className="relative min-w-fit h-14">
-        <img src={myProfile} alt="me" className="h-14 w-14 rounded-full" />
+        <ProfilePhoto noBorder photo={myProfile}/>
         <PlusIcon className="absolute bottom-0 right-0 bg-white rounded-full" />
       </div>
       <ChevronIcon
@@ -38,13 +39,7 @@ function StorySection() {
       />
       {contacts.map((contact) => (
         <div key={contact.name} className="flex flex-col items-center">
-          <div className="h-[60px] w-[60px] new-story-border rounded-full relative">
-            <img
-              src={contact.photo}
-              className="h-14 w-14 rounded-full border-2 absolute top-[2px] left-[2px]"
-              alt="profile"
-            />
-          </div>
+          <ProfilePhoto photo={contact.photo} />
           <p className="text-xxs mt-1">
             {contact.name.length > 10
               ? contact.name.slice(0, 10) + "..."
