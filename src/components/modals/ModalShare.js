@@ -1,7 +1,7 @@
 import React, { useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { setModal } from "../../redux/actionCreators";
-import NavbarShare from "../Share/NavbarShare";
+import NavbarShare from "../Share/ShareHeader";
 import SearchContact from "../Share/SearchContact";
 import ShareActionSection from "../Share/ShareActionSection";
 import SuggestionList from "../Share/SuggestionList";

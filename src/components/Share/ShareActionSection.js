@@ -21,7 +21,7 @@ function ShareActionSection() {
     dispatch(setToastMessage("Sent"));
   };
   return (
-    <div className="border-t p-4 w-full mt-4 fixed bottom-0 bg-white lg:rounded-b-2xl lg:relative lg:mt-0">
+    <div className="border-t p-4 w-full max-w-md mt-4 fixed bottom-0 bg-white lg:rounded-b-2xl lg:relative lg:mt-0 lg:max-w-full">
       {receivers.length > 0 && (
         <input
           type="text"

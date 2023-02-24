@@ -27,7 +27,7 @@ function Router() {
   return (
     <div className="flex justify-center overflow-x-hidden">
       <Sidebar />
-      <div className="w-full max-w-[470px] relative">
+      <div className="w-full max-w-md relative">
         <RouterProvider router={route} />
       </div>
     </div>

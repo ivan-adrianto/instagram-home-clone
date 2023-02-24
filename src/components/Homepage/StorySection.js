@@ -1,5 +1,4 @@
 import React, { useRef, useState } from "react";
-import myProfile from "../../assets/images/my-profile.jpeg";
 import { ReactComponent as PlusIcon } from "../../assets/icons/small-plus-icon.svg";
 import { ReactComponent as ChevronIcon } from "../../assets/icons/rounded-chevron.svg";
 import contacts from "../../dummyData/contacts";
@@ -22,7 +21,10 @@ function StorySection() {
       ref={ref}
     >
       <div className="relative min-w-fit h-14">
-        <ProfilePhoto noBorder photo={myProfile}/>
+        <ProfilePhoto
+          noBorder
+          photo={require("../../assets/images/my-profile.jpeg")}
+        />
         <PlusIcon className="absolute bottom-0 right-0 bg-white rounded-full" />
       </div>
       <ChevronIcon

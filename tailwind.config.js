@@ -5,7 +5,10 @@ module.exports = {
     extend: {
       fontSize: {
         xxs: "10px"
-      }
+      },
+      maxWidth: {
+        md: "470px"
+      },
     },
   },
   plugins: [],

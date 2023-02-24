@@ -6,7 +6,7 @@ import { ReactComponent as LoveIcon } from "../../assets/icons/love-icon.svg"
 
 function HomeHeader() {
   return (
-    <div className="flex justify-between px-4 py-2 border-b items-center fixed bg-white z-10 w-full max-w-[470px] lg:hidden" >
+    <div className="flex justify-between px-4 py-2 border-b items-center fixed bg-white z-10 w-full max-w-md lg:hidden" >
       <div className="flex gap-2 items-center">
         <InstagramLogo />
         <Chevron />

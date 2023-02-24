@@ -16,7 +16,7 @@ function NavbarShare() {
     dispatch(setReceivers([]));
   };
   return (
-    <div className="flex justify-between items-center h-11 px-4 border-b fixed lg:relative top-0 w-full bg-white rounded-t-2xl">
+    <div className="flex justify-between items-center h-11 px-4 border-b fixed lg:relative top-0 w-full bg-white rounded-t-2xl max-w-md lg:max-w-full">
       <div></div>
       <p className="font-bold">Share</p>
       <CloseIcon onClick={onClose} className="cursor-pointer" />

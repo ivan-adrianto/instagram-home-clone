@@ -24,7 +24,7 @@ function CommentInput() {
   const [comment, setComment] = useState("");
 
   return (
-    <div className="fixed lg:relative bg-zinc-100 flex w-full top-11 gap-5 items-center px-4 py-2 max-w-[470px] max-h-[60px] lg:top-0 lg:rounded-br-xl">
+    <div className="fixed lg:relative bg-zinc-100 flex w-full top-11 gap-5 items-center px-4 py-2 max-w-md max-h-[60px] lg:top-0 lg:rounded-br-xl">
       {/* <img
         src={require("../../assets/images/my-profile.jpeg")}
         className="h-8 w-8 rounded-full"

@@ -9,14 +9,14 @@ function Post({ post, index }) {
     <div className="mb-4">
       <PostHeader post={post} />
       {!isLoaded && (
-        <div className="w-screen h-[100vw] max-w-[470px] max-h-[470px] flex justify-center items-center">
+        <div className="w-screen h-[100vw] max-w-md max-h-[470px] flex justify-center items-center">
           <Spinner />
         </div>
       )}
       <img
         src={post.image}
         alt="post"
-        className={`w-screen h-[100vw] max-w-[470px] max-h-[470px] ${
+        className={`w-screen h-[100vw] max-w-md max-h-[470px] ${
           isLoaded ? "block" : "hidden"
         }`}
         onLoad={() => setIsLoaded(true)}

@@ -9,8 +9,9 @@ import Navbar from "../common/Navbar";
 function CommentContainer() {
   const params = useParams();
   const { posts } = useSelector((state) => state);
-  let selectedPost = posts.find((post) => post.id === parseInt(params.id));
+  let selectedPost = posts[params.id - 1]; //the id was created as index + 1
   selectedPost.choice = selectedPost.question;
+
   useEffect(() => {
     window.scrollTo({ top: 0 });
   }, []);
@@ -18,7 +19,7 @@ function CommentContainer() {
     <div>
       <CommentHeader />
       <Navbar />
-      <CommentInput/>
+      <CommentInput />
       <div className="pt-28 pb-12 px-4">
         <Comment comment={selectedPost} isCaption />
         {selectedPost?.choices?.map((comment, index) => (

@@ -14,8 +14,8 @@ function ModalPostDetail() {
   const dispatch = useDispatch();
 
   const { modal, posts } = useSelector((state) => state);
-  let selectedPost = posts[id - 1];
-  selectedPost.choice = selectedPost.question;
+  let selectedPost = posts[id - 1]; //the id was created as index + 1
+  selectedPost.choice = selectedPost.question; 
 
   const ref = useRef(null);
 
